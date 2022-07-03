@@ -1,0 +1,466 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --def-color:rgb(16, 182, 233);
+    --hover-color:rgb(22, 163, 206);
+    --facebook-color:#1877f2;
+    --insta-color:linear-gradient(to bottom,#405de6,#5851db,#833ab4,#c13584,#e1306c,#fd1d1d,#f56040,#f77737,#fcaf45,#ffdc80);
+    --skype-color:#1da1f2;
+    --twitter-color:#1da1f2;
+}
+
+body{
+    font-family:'Open Sans', sans-serif;
+    
+}
+
+.banner{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../landing-image/pexels-jean-van-der-meulen-1457842.jpg);
+    background-size: cover;
+    min-height:100vh;
+    position: relative;
+}
+
+.banner header{
+padding-top: 30px;
+padding-bottom: 30px;
+position: relative;
+margin-bottom: 20px;
+}
+
+ header .container{
+    padding-right: 50px;
+padding-left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width:767px){
+    header .container{
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+ header nav{
+    display: flex;
+    flex: 1;
+}
+
+ header .fa-bars{
+    color: white;
+    font-size: 40px;
+    display: none;
+}
+
+@media (max-width:767px){
+     header .fa-bars{
+        display: block;
+        cursor: pointer;
+    }
+}
+
+ header .fa-xmark {
+    display: none;
+}
+
+ header .container ul{
+list-style: none;
+display: flex;
+}
+
+ header ul li{
+color: white;
+text-transform: uppercase;
+padding: 10px 20px;
+font-size: 15px;
+font-weight: 600;
+cursor: pointer;
+letter-spacing: 1px;
+transition: 0.5s;
+position: relative;
+}
+
+ header ul li::before{
+content: "";
+position: absolute;
+left:20;
+bottom: 0;
+height: 2px;
+width:0;
+background-color: var(--def-color);
+transition: 0.5s;
+}
+
+ header ul li:hover::before{
+    width: calc(100% - 41px);
+}
+
+ header ul li.active{
+    color: var(--def-color);
+}
+ header ul li:hover{
+color: var(--def-color);
+
+}
+ header .form{
+    flex: 1;
+}
+header form{
+display: flex;
+width: fit-content;
+margin-left: auto;
+border-radius: 20px;
+}
+
+@media (max-width:767px){
+     header form{
+       border-radius: 0;
+       text-align: left;
+        margin: 0;
+
+        }
+
+         header .form{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 30px;
+            
+        }
+        header .form .fa-xmark{
+            display: block;
+            color: var(--def-color);
+            font-size:40px;
+            cursor: pointer;
+        }
+}
+
+header form input[type="submit"] {
+color: white;
+padding: 10px 20px;
+background-color: var(--def-color);
+text-transform: capitalize;
+border: 1px solid var(--def-color);
+border-top-right-radius: 4px;
+border-bottom-right-radius: 4px;
+font-weight: 500;
+letter-spacing: 1px;
+cursor: pointer;
+}
+
+header form input[type="search"]::placeholder{
+    color: rgb(238, 235, 235);
+padding: 5px;
+text-transform: capitalize;
+font-weight: 500;
+letter-spacing: 0.5px;
+}
+
+header form input[type="search"] {
+    background-color: transparent;
+    border:1px solid var(--def-color);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    caret-color: var(--def-color);
+    padding-left:10px;
+    outline:none;
+    
+}
+
+header form input[type="search"]::placeholder{
+    transition: 0.3s;
+}
+
+header form input[type="search"]:focus::placeholder{
+   opacity: 0;
+}
+
+@media (max-width:767px){
+    header nav{
+        left: 0;
+        top: -100%;
+        width: 100%;
+        position: fixed;
+        flex-direction: column-reverse;
+        background-color: rgb(255, 255, 255);
+        padding: 30px 25px 20px 25px;
+        transition: 0.5s;
+    }
+     header ul{
+        flex-direction: column;
+        border-top: 1px solid rgb(223, 223, 223);
+        padding-top: 10px;
+        
+    }
+     header ul li{
+       color: var(--def-color);
+       padding: 18px 0;
+       width:fit-content;
+       transition: 0.3s;
+    }
+     header ul li:hover{
+        padding-left: 5px;
+    }
+    header ul li::before{
+        display: none;
+    }
+     header form input[type="search"]::placeholder{
+        color: var(--def-color);
+        transition: 0.3s;
+    }
+     header form input[type="search"]:focus::placeholder{
+        color: white;
+    }
+}
+
+@media(max-width:400px){
+    header form input[type="search"]{
+        width: 175px;
+    }
+}
+
+.banner .section{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.section .container{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 50px;
+    padding-left: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width:767px){
+     .section {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width:767px){
+     .section .container{
+        flex-direction: column;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+ .section .text{
+    flex-basis: 60%;
+}
+
+@media (max-width:767px){
+     .section .text{
+        text-align: center;
+        width:100%;
+    }
+}
+
+.section .text h1{
+    text-transform: capitalize;
+    color: white;
+    font-size: 50px;
+    margin: 0;
+}
+
+@media (max-width:767px){
+    .section .text h1{
+    text-transform: capitalize;
+    color: white;
+    font-size: 40px;
+    margin-bottom:20px;
+}
+
+.section .text h1 br{
+   display: none;
+}
+}
+
+.section .text h1 span{
+    color: var(--def-color);
+    font-size: 60px;
+}
+
+@media (max-width:767px){
+   .section .text h1 span{
+        color: var(--def-color);
+        font-size: 40px;
+    }
+}
+
+  .section .text p {
+    color:white;
+    line-height: 2;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+@media (max-width:767px){
+    .section .text p {
+        font-size: 18px;
+    }
+}
+
+ .section .text button {
+    border: none;
+border-radius:25px;
+font-weight: 600;
+padding: 17px 40px;
+cursor: pointer;
+font-size:larger;
+background-color: var(--def-color);
+text-transform: uppercase;
+transition: 0.3s;
+}
+
+.section .text button:hover{
+   background-color: var(--hover-color);  
+}
+@media (max-width:767px){
+    .section .text button{
+        padding:15px 30px;
+    }
+}
+
+.section .form{
+    flex-basis: 30%;
+    background-color: rgba(0,0,0,0.75);
+    padding: 25px 30px 25px;
+    border-radius: 8px;
+
+}
+
+@media (max-width:767px){
+    .section .form{
+        margin-top: 60px;
+        width: 400px;
+    }
+}
+
+@media (max-width:400px){
+    .section .form{
+        width: 100%;
+    }
+}
+
+.section .form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.section .form form input{
+border:none;
+}
+
+.section .form form input[type="submit"]{
+    padding:12px;
+    border-radius: 6px;
+color: var(--def-color);
+text-transform: capitalize;
+font-weight: 700;
+font-size: larger;
+margin-bottom: 40px;
+margin-top:10px;
+cursor: pointer;
+}
+
+.section .form form input[type="email"]{
+background-color: transparent;
+border-bottom:1px solid var(--def-color);
+padding: 10px 0;
+margin-bottom: 30px;
+}
+
+.section .form form input[type="email"]::placeholder,
+.section .form form input[type="password"]::placeholder{
+    text-transform: capitalize;
+    color: #aaa;
+}
+
+.section .form form input[type="password"]{
+background-color: transparent;
+border-bottom: 1px solid var(--def-color);
+padding: 10px 0;
+margin-bottom: 40px;
+}
+
+.section .form form button{
+    margin-bottom: 10px;
+    padding:12px;
+    border-radius: 6px;
+    background-color: var(--def-color);
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: larger;
+    border:none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+ .section .form form button:hover{
+    background-color: var(--hover-color);
+}
+
+.section .form form button + p::first-letter{
+text-transform: capitalize;
+}
+
+.section .form form button + p{
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 40px;
+
+}
+
+.section .form form button + p span{
+    color: var(--def-color);
+}
+
+.section .form form button + p + p{
+    color: white;
+    text-align: center;
+}
+
+.section .form form .social-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section .form form .social-links i {
+    font-size: 24px;
+    color: white;
+    margin: 17px 12px 0px;
+}
+
+.section .form form .social-links i.fa-instagram {
+   border-radius: 4px;
+}
+
+.section .form form .social-links i.fa-facebook-f:hover{
+    color: var(--facebook-color);
+}
+
+.section .form form .social-links i.fa-instagram:hover{
+    background-image: var(--insta-color);
+}
+
+.section .form form .social-links i.fa-twitter:hover{
+    color: var(--twitter-color);
+}
+
+.section .form form .social-links i.fa-skype:hover{
+    color: var(--skype-color);
+}
